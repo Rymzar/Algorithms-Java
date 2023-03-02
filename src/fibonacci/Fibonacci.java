@@ -13,12 +13,15 @@ public class Fibonacci {
         return fibNiave(n - 1) + fibNiave(n - 2);
     }
     //задействовав доп память, сокращаем время работы
+    // O(n) - сложность алгоритма
     private static long fibEffectiv(int n) {
+        // O(n)
         long[] arr = new long[n + 1];
 
         arr[0] = 0;
         arr[1] = 1;
 
+        //O(n+n) => O(2n) => O(n) - не рассматриваем константы когда говорим об асимптотической сложности
         for (int i = 2; i <= n; i++) {
             arr[i] = arr[i - 1] + arr[i - 2];
         }
